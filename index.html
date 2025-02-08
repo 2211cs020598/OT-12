@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dialog Box Example</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the Web Page</h1>
+    <button onclick="showDialog()">Click Me</button>
+  </div>
+
+  <!-- Dialog Box -->
+  <div id="dialog" class="dialog">
+    <div class="dialog-content">
+      <p>Do you want to navigate to #predict?</p>
+      <button onclick="handleDialog(true)">OK</button>
+      <button onclick="handleDialog(false)">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    // Function to show the dialog box
+    function showDialog() {
+      const dialog = document.getElementById('dialog');
+      dialog.style.display = 'block';
+    }
+
+    // Function to handle dialog box actions
+    function handleDialog(confirm) {
+      const dialog = document.getElementById('dialog');
+      dialog.style.display = 'none';
+
+      if (confirm) {
+        // If OK is clicked, navigate to #predict
+        window.location.href = '#predict';
+      }
+    }
+  </script>
+</body>
+</html>
